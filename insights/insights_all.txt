@@ -1,0 +1,36 @@
+# Olist E-commerce SQL Analysis — Insights
+
+## Q1: Business size
+The marketplace processed 99,441 orders from 96,096 unique customers and 3,095 sellers, generating R$13.2M in delivered-order revenue. There are only about 1.03 orders per customer, suggesting most customers don't come back — a pattern confirmed later in Q10 and Q11.
+
+## Q2: Monthly trend
+Monthly delivered orders grew from 750 in Jan 2017 to a peak of 7,289 in Nov 2017 (R$988K revenue), likely driven by Black Friday. After the peak, volume settled at a plateau of roughly 6,000-6,400 orders per month through mid-2018. Data before 2017 and after Aug 2018 is too sparse/incomplete to draw trend conclusions from.
+
+## Q3: Categories
+The top 5 categories generate 39.7% of total revenue, and the top 10 generate 62.4%. Health & beauty leads at R$1.23M. Watches & gifts has a much higher average order value (~R$212) than bed/bath/table (~R$110), even though bed/bath/table has more orders — so they need different strategies (value vs volume).
+
+## Q4: Payments
+Credit cards account for 75.2% of orders and have the highest average order value (R$164). Boleto (bank slip) is still used in 19.5% of orders, so it remains an important payment option to support.
+
+## Q5: Month-over-month revenue growth
+Revenue growth was highly volatile in the early months, reflecting the platform's ramp-up phase (from just 1 order in Sep 2016 to hundreds by early 2017), then stabilized into more moderate month-over-month swings through 2017-2018 as order volume matured. Early volatility is expected for any new platform and shouldn't be read as instability — it's a sign of a scaling business rather than a mature, steady-state one.
+
+## Q6: Running total of revenue
+The cumulative revenue curve shows steady, consistent growth from late 2016 through mid-2018, with no major plateaus or declines, reaching approximately R$13.2M by the end of the delivered-order dataset. This confirms the business was on a genuine growth trajectory throughout its tracked history, not just a short-term spike.
+
+## Q7: Delivery time and late % by state
+Late delivery rates vary sharply by state. Alagoas (AL) has the worst record at 23.9% of orders late, followed by Maranhão (MA) at 19.7% and Piauí (PI) at 16.0%. Notably, average delivery time doesn't fully explain this: Roraima (RR) has the longest average delivery time (29 days) but a comparatively lower late rate (12.2%), while AL and MA have much shorter average delivery times (24 and 21 days) yet the highest late rates. This suggests the issue isn't just "how far the state is," but how well delivery estimates match reality in each region, some states may be given unrealistically tight estimates rather than genuinely slow delivery. Rio de Janeiro (RJ), a major metro area, still shows a notable 13.5% late rate across 12,350 orders, the largest order volume in this list, making it a high-impact fix if addressed. Recommendation: rather than a blanket delivery policy, the business should review how estimated delivery dates are calculated per state, since misaligned estimates (not just raw distance) appear to drive dissatisfaction.
+## Q8: Late delivery vs review score
+Orders delivered late average a review score of just 2.57, compared to 4.29 for on-time orders — a gap of 1.72 stars. Late deliveries make up only about 8% of orders (7,700 of 96,353) but they're clearly the single biggest driver of customer dissatisfaction on the platform. If advising the business, fixing delivery reliability should be a top priority, since it has the most direct, measurable impact on customer experience.
+
+## Q9: Top sellers by revenue, ranked within state
+The top sellers are overwhelmingly concentrated in São Paulo (SP), Brazil's largest commercial hub, with the single highest seller generating R$226,988 in revenue from 1,124 orders. Ranking sellers within their own state (rather than only globally) also surfaces strong regional performers, like top sellers in Bahia (BA), who wouldn't appear in a simple global top-10 list but are clearly leaders in their own market. This is useful for a business wanting to recognize or replicate success locally, not just chase national top performers.
+
+## Q10: Repeat-customer rate
+Only 3.1% of customers (2,997 of 96,096) placed more than one order. This confirms the early signal from Q1 (about 1.03 orders per customer): the business is overwhelmingly driven by one-time buyers rather than repeat business. This is a critical finding — retention/loyalty programs, better delivery experience (tying back to Q8), and post-purchase engagement could meaningfully grow revenue without needing to acquire new customers.
+
+## Q11: Cohort retention
+Cohort retention (% of customers who ever placed a second order) is consistently low, but shows a clear time-dependent pattern: 2017 cohorts settle around 3-4% return rate, while cohorts from late 2017 onward decline steadily, down to 0% for the Aug 2018 cohort. This decline is expected since those customers have had little to no time window to return before the dataset ends. Excluding the most recent 6-8 months (where the low % is a data-window artifact, not a real signal), the mature retention rate settles around 3-4%, consistent with Q10's finding that only 3.1% of customers are repeat buyers. This confirms one-time purchases are structural to this business, not a recent decline.
+
+## Q12: Customer spend segmentation
+Customer spend is highly concentrated: the top 25% of customers by spend account for 62.5% of total revenue, while the bottom 25% contribute just 5.1%. This is a classic Pareto-like pattern in e-commerce. Combined with the low repeat-purchase rate (Q10, Q11), this suggests the "top quartile" isn't necessarily loyal repeat buyers — it's more likely customers who made one large purchase. This is worth flagging to the business: high-value customers should be identified and prioritized (e.g., premium support, personalized offers) even though the platform overall struggles with repeat purchases.
